@@ -1,0 +1,213 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #121212, #1A1A1A);
+    color: #E0E0E0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: black;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 4px solid #8E2DE2;
+    box-shadow: 0px 4px 15px rgba(142, 45, 226, 0.5);
+}
+
+/* Sections - Glassmorphism Effect */
+section {
+    width: 75%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 25px rgba(74, 0, 224, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 30px rgba(74, 0, 224, 0.3);
+}
+
+/* Section Headings */
+h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    color: #8E2DE2;
+    border-bottom: 3px solid #8E2DE2;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Experience & Education Cards */
+.edu-item, .experience-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-left: 6px solid #4A00E0;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.edu-item:hover, .experience-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 4px 20px rgba(74, 0, 224, 0.3);
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Skill Tags */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+}
+
+.skill-list li {
+    background: rgba(142, 45, 226, 0.8);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.skill-list li:hover {
+    background: black;
+    color: #8E2DE2;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(142, 45, 226, 0.8);
+}
+
+/* Skill Progress Bars */
+.skill {
+    margin: 15px 0;
+    padding: 10px 0;
+}
+
+.skill-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8E2DE2;
+    margin-bottom: 8px;
+}
+
+/* Progress Bar Container */
+.skill-bar {
+    height: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Progress Fill */
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+    width: 0%;
+    border-radius: 10px;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Different Skill Levels */
+.skill[data-level="90"] .skill-fill { width: 90%; }
+.skill[data-level="80"] .skill-fill { width: 80%; }
+.skill[data-level="70"] .skill-fill { width: 70%; }
+.skill[data-level="60"] .skill-fill { width: 60%; }
+.skill[data-level="50"] .skill-fill { width: 50%; }
+
+/* Contact Section */
+.contact ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact li {
+    margin: 12px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact li:hover {
+    transform: scale(1.07);
+    color: #8E2DE2;
+}
+
+/* Icons */
+.contact li::before {
+    font-size: 1.5rem;
+}
+
+.contact li:nth-child(1)::before { content: "📧"; }  /* Email */
+.contact li:nth-child(2)::before { content: "📞"; }  /* Phone */
+.contact li:nth-child(3)::before { content: "📍"; }  /* Address */
+.contact li:nth-child(4)::before { content: "🌐"; }  /* Website */
+.contact li:nth-child(5)::before { content: "🔗"; }  /* Social Media */
+
+/* Footer */
+footer {
+    text-align: center;
+    background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    header {
+        padding: 30px;
+        font-size: 1.8rem;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-list {
+        justify-content: center;
+    }
+}
